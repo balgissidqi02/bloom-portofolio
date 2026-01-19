@@ -51,7 +51,7 @@ const CTASection = () => {
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
             <a
-              href="mailto:hello@sarahamelia.com"
+              href="mailto:balgissidqi@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-ivory text-charcoal rounded-full font-sans font-medium hover:bg-rose-light transition-colors duration-300 group"
             >
               Get In Touch

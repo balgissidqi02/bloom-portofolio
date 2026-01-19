@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Instagram, Linkedin, Mail, Heart } from "lucide-react";
 
 const socialLinks = [
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-  { name: "Instagram", icon: Instagram, href: "https://instagram.com" },
-  { name: "Email", icon: Mail, href: "mailto:hello@sarahamelia.com" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/balgis-sidqi" },
+  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/blgss_sdqii?igsh=Njh0OHRsY2d5dWIw" },
+  { name: "Email", icon: Mail, href: "mailto:balgissidqi@gmail.com" },
 ];
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-serif font-medium text-charcoal">
-              Sarah<span className="text-primary italic">.</span>
+              Balgis Sidqi<span className="text-primary italic">.</span>
             </h3>
             <p className="mt-2 text-sm font-sans text-muted-foreground">
               Creating meaningful experiences,<br />one design at a time.
@@ -60,7 +60,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm font-sans text-muted-foreground">
-            © 2025 Sarah Amelia. All rights reserved.
+            © 2025 Balgis Sidqi Al Mukarromah. All rights reserved.
           </p>
           <p className="text-sm font-sans text-muted-foreground flex items-center gap-1">
             Made with <Heart className="w-4 h-4 text-primary fill-primary" /> and lots of coffee

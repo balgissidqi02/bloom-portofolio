@@ -33,7 +33,7 @@ const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-balance"
           >
             Hi, I'm{" "}
-            <span className="text-primary italic">Sarah Amelia</span>
+            <span className="text-primary italic">Balgis Sidqi</span>
             <br />
             <span className="text-charcoal">Creative Problem Solver</span>
           </motion.h1>

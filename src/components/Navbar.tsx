@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className="container-wide px-6 md:px-12 lg:px-20 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="text-2xl font-serif font-medium text-charcoal">
-            Sarah<span className="text-primary italic">.</span>
+            Balgis<span className="text-primary italic">.</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -49,7 +49,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="mailto:hello@sarahamelia.com"
+              href="mailto:balgissidqi@gmail.com"
               className="px-5 py-2 bg-charcoal text-ivory rounded-full text-sm font-sans font-medium hover:bg-foreground transition-colors duration-300"
             >
               Say Hello
@@ -89,7 +89,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="mailto:hello@sarahamelia.com"
+                href="mailto:balgissidqi@gmail.com"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-4 px-6 py-3 bg-charcoal text-ivory rounded-full text-center font-sans font-medium"
               >
