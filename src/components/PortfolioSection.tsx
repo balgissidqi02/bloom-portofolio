@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Briefcase, GraduationCap, Award, Users, Folder, Star } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Users, Folder, Star, ChevronDown, ChevronUp } from "lucide-react";
 
 interface PortfolioItem {
   id: number;
@@ -112,14 +112,31 @@ const portfolioItems: PortfolioItem[] = [
   },
 ];
 
+const ALL_CATEGORY_LIMIT = 3;
+
 const PortfolioSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeCategory, setActiveCategory] = useState("all");
+  const [showAllItems, setShowAllItems] = useState(false);
 
   const filteredItems = activeCategory === "all" 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === activeCategory);
+
+  // Apply limit only for "All" category
+  const displayedItems = activeCategory === "all" && !showAllItems
+    ? filteredItems.slice(0, ALL_CATEGORY_LIMIT)
+    : filteredItems;
+
+  const hasMoreItems = activeCategory === "all" && filteredItems.length > ALL_CATEGORY_LIMIT;
+  const remainingCount = filteredItems.length - ALL_CATEGORY_LIMIT;
+
+  // Reset showAllItems when switching categories
+  const handleCategoryChange = (categoryId: string) => {
+    setActiveCategory(categoryId);
+    setShowAllItems(false);
+  };
 
   return (
     <section id="portfolio" className="section-padding gradient-warm">
@@ -154,7 +171,7 @@ const PortfolioSection = () => {
             return (
               <button
                 key={category.id}
-                onClick={() => setActiveCategory(category.id)}
+                onClick={() => handleCategoryChange(category.id)}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-sans transition-all duration-300 ${
                   activeCategory === category.id
                     ? "bg-charcoal text-ivory shadow-soft"
@@ -173,47 +190,77 @@ const PortfolioSection = () => {
           layout
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {filteredItems.map((item, index) => (
-            <motion.article
-              key={item.id}
-              layout
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 * index, duration: 0.6 }}
-              className="group bg-card rounded-2xl p-6 shadow-soft hover:shadow-card transition-all duration-300 cursor-pointer"
-            >
-              {/* Category Badge */}
-              <span className="inline-block px-3 py-1 bg-sage-light text-secondary-foreground rounded-full text-xs font-sans mb-4 capitalize">
-                {item.category}
-              </span>
+          <AnimatePresence mode="popLayout">
+            {displayedItems.map((item, index) => (
+              <motion.article
+                key={item.id}
+                layout
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                transition={{ delay: 0.05 * index, duration: 0.4, ease: "easeOut" }}
+                className="group bg-card rounded-2xl p-6 shadow-soft hover:shadow-card transition-all duration-300 cursor-pointer"
+              >
+                {/* Category Badge */}
+                <span className="inline-block px-3 py-1 bg-sage-light text-secondary-foreground rounded-full text-xs font-sans mb-4 capitalize">
+                  {item.category}
+                </span>
 
-              {/* Title */}
-              <h3 className="text-xl font-serif font-medium text-charcoal mb-2 group-hover:text-primary transition-colors">
-                {item.title}
-              </h3>
+                {/* Title */}
+                <h3 className="text-xl font-serif font-medium text-charcoal mb-2 group-hover:text-primary transition-colors">
+                  {item.title}
+                </h3>
 
-              {/* Role */}
-              <p className="text-sm font-sans text-primary font-medium mb-3">
-                {item.role}
-              </p>
-
-              {/* Description */}
-              <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4">
-                {item.description}
-              </p>
-
-              {/* Highlight */}
-              <div className="pt-4 border-t border-border">
-                <p className="text-xs font-sans text-muted-foreground uppercase tracking-wider mb-1">
-                  Highlight
+                {/* Role */}
+                <p className="text-sm font-sans text-primary font-medium mb-3">
+                  {item.role}
                 </p>
-                <p className="text-sm font-sans font-medium text-foreground">
-                  {item.highlight}
+
+                {/* Description */}
+                <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4">
+                  {item.description}
                 </p>
-              </div>
-            </motion.article>
-          ))}
+
+                {/* Highlight */}
+                <div className="pt-4 border-t border-border">
+                  <p className="text-xs font-sans text-muted-foreground uppercase tracking-wider mb-1">
+                    Highlight
+                  </p>
+                  <p className="text-sm font-sans font-medium text-foreground">
+                    {item.highlight}
+                  </p>
+                </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
         </motion.div>
+
+        {/* Show More/Less Toggle - Only for "All" category */}
+        {hasMoreItems && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
+            className="flex justify-center mt-10"
+          >
+            <button
+              onClick={() => setShowAllItems(!showAllItems)}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-sans font-medium bg-card text-foreground hover:bg-muted border border-border shadow-soft hover:shadow-card transition-all duration-300 group"
+            >
+              {showAllItems ? (
+                <>
+                  <span>Show less</span>
+                  <ChevronUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+                </>
+              ) : (
+                <>
+                  <span>Show more ({remainingCount} more)</span>
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+                </>
+              )}
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
