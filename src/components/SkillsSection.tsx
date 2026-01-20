@@ -2,26 +2,43 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { 
-  Figma, 
-  Palette, 
-  PenTool, 
-  Layout, 
+  FileText, 
+  Table, 
+   Monitor,
+  Code, 
+  Database, 
+  BarChart,
   Users, 
   Lightbulb,
+  RefreshCw,
   MessageSquare,
   Target,
   Sparkles
 } from "lucide-react";
+import {
+  SiReact,
+  SiLaravel,
+  SiPhp,
+  SiHtml5,
+  SiCss3
+} from "react-icons/si";
 
 const skillCategories = [
   {
-    title: "Design Tools",
+    title: "Hard Skills",
     color: "rose",
     skills: [
-      { name: "Figma", icon: Figma },
-      { name: "Adobe XD", icon: Palette },
-      { name: "Illustrator", icon: PenTool },
-      { name: "Canva", icon: Layout },
+      { name: "Microsoft Word", icon: FileText },
+      { name: "Microsoft Excel", icon: Table },
+      { name: "Microsoft Power Point", icon: Monitor  },
+      { name: "Python", icon: Code },
+      { name: "SQL", icon: Database  },
+      { name: "Power BI", icon: BarChart  },
+      { name: "React", icon: SiReact  },
+      { name: "Laravel", icon: SiLaravel  },
+      { name: "PHP", icon: SiPhp },
+      { name: "HTML", icon: SiHtml5  },
+      { name: "CSS", icon: SiCss3  },
     ],
   },
   {
@@ -31,6 +48,7 @@ const skillCategories = [
       { name: "Communication", icon: MessageSquare },
       { name: "Teamwork", icon: Users },
       { name: "Problem Solving", icon: Lightbulb },
+      { name: "Adaptable", icon: RefreshCw }, 
       { name: "Leadership", icon: Target },
     ],
   },
