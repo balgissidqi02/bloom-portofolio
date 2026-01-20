@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { 
   FileText, 
   Table, 
-   Monitor,
+  Monitor,
   Code, 
   Database, 
   BarChart,
@@ -13,7 +13,9 @@ import {
   RefreshCw,
   MessageSquare,
   Target,
-  Sparkles
+  Sparkles,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 import {
   SiReact,
@@ -65,9 +67,19 @@ const additionalSkills = [
   "Copywriting",
 ];
 
+const SKILLS_LIMIT = 6;
+
 const SkillsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
+
+  const toggleCategory = (title: string) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [title]: !prev[title]
+    }));
+  };
 
   return (
     <section className="section-padding gradient-sage">
@@ -102,28 +114,54 @@ const SkillsSection = () => {
                 {category.title}
               </h3>
               <div className="grid grid-cols-2 gap-4">
-                {category.skills.map((skill, index) => {
-                  const Icon = skill.icon;
-                  return (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                      className={`flex items-center gap-3 p-3 rounded-xl ${
-                        category.color === "rose" ? "bg-rose-light" : "bg-sage-light"
-                      } hover:shadow-soft transition-shadow duration-300`}
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-background flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-charcoal" />
-                      </div>
-                      <span className="font-sans text-sm font-medium text-charcoal">
-                        {skill.name}
-                      </span>
-                    </motion.div>
-                  );
-                })}
+                <AnimatePresence>
+                  {category.skills
+                    .slice(0, expandedCategories[category.title] ? undefined : SKILLS_LIMIT)
+                    .map((skill, index) => {
+                      const Icon = skill.icon;
+                      return (
+                        <motion.div
+                          key={skill.name}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.9 }}
+                          transition={{ delay: 0.1 + index * 0.05, duration: 0.3 }}
+                          className={`flex items-center gap-3 p-3 rounded-xl ${
+                            category.color === "rose" ? "bg-rose-light" : "bg-sage-light"
+                          } hover:shadow-soft transition-shadow duration-300`}
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-background flex items-center justify-center">
+                            <Icon className="w-5 h-5 text-charcoal" />
+                          </div>
+                          <span className="font-sans text-sm font-medium text-charcoal">
+                            {skill.name}
+                          </span>
+                        </motion.div>
+                      );
+                    })}
+                </AnimatePresence>
               </div>
+              
+              {category.skills.length > SKILLS_LIMIT && (
+                <motion.button
+                  onClick={() => toggleCategory(category.title)}
+                  className="mt-4 flex items-center gap-2 text-sm font-sans text-muted-foreground hover:text-primary transition-colors duration-300 mx-auto"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {expandedCategories[category.title] ? (
+                    <>
+                      <span>Show less</span>
+                      <ChevronUp className="w-4 h-4" />
+                    </>
+                  ) : (
+                    <>
+                      <span>Show more ({category.skills.length - SKILLS_LIMIT} more)</span>
+                      <ChevronDown className="w-4 h-4" />
+                    </>
+                  )}
+                </motion.button>
+              )}
             </motion.div>
           ))}
         </div>
