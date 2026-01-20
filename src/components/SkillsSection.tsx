@@ -22,7 +22,9 @@ import {
   SiLaravel,
   SiPhp,
   SiHtml5,
-  SiCss3
+  SiCss3,
+  SiSupabase,
+  SiTypescript
 } from "react-icons/si";
 
 const skillCategories = [
@@ -41,6 +43,8 @@ const skillCategories = [
       { name: "PHP", icon: SiPhp },
       { name: "HTML", icon: SiHtml5  },
       { name: "CSS", icon: SiCss3  },
+      { name: "Supabase", icon: SiSupabase  },
+      { name: "TypeScript", icon: SiTypescript  },
     ],
   },
   {
