@@ -34,10 +34,9 @@ const AboutSection = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-lg font-sans text-muted-foreground leading-relaxed"
             >
-              Saya adalah seseorang yang percaya bahwa setiap pengalaman, sekecil apapun, 
-              adalah kesempatan untuk belajar dan berkembang. Dengan latar belakang di 
-              bidang <span className="text-foreground font-medium">desain dan strategi</span>, 
-              saya senang menggabungkan kreativitas dengan pemikiran analitis.
+              Setiap pengalaman menjadi kesempatan bagi saya untuk terus belajar dan berkembang. Dengan latar belakang
+               <span className="text-foreground font-medium"> pengembangan website & aplikasi, serta pengolahan data</span> 
+                , saya senang bekerja dengan proses yang terstruktur serta pendekatan logis dalam menyelesaikan masalah.
             </motion.p>
 
             <motion.p
@@ -46,9 +45,11 @@ const AboutSection = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg font-sans text-muted-foreground leading-relaxed"
             >
-              Cara kerja saya? Saya suka memulai dengan mendengarkan, memahami masalah 
-              dari berbagai sudut pandang, lalu menemukan solusi yang tidak hanya efektif 
-              tapi juga bermakna. Saya percaya kolaborasi yang baik menghasilkan karya terbaik.
+              Cara kerja saya dimulai dari memahami permasalahan secara menyeluruh, 
+              membaginya ke dalam langkah-langkah yang lebih sederhana, lalu menemukan solusi 
+              yang praktis dan mendukung akurasi serta efisiensi kerja.
+              Saya percaya bahwa komunikasi yang jelas dan kolaborasi yang baik dapat menghasilkan 
+              hasil kerja yang lebih rapi dan dapat diandalkan.
             </motion.p>
 
             <motion.div
@@ -57,7 +58,7 @@ const AboutSection = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="flex flex-wrap gap-3 pt-4"
             >
-              {["Curious", "Detail-oriented", "Collaborative", "Growth-minded"].map((trait, index) => (
+              {["Detail-oriented", "Collaborative ", "Growth-oriented", "Structured thinker"].map((trait, index) => (
                 <span
                   key={trait}
                   className="px-4 py-2 bg-rose-light text-charcoal rounded-full text-sm font-sans"

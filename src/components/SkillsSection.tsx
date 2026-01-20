@@ -57,14 +57,14 @@ const skillCategories = [
 ];
 
 const additionalSkills = [
-  "User Research",
-  "Wireframing",
-  "Prototyping",
-  "Design Systems",
-  "Usability Testing",
-  "Visual Design",
-  "Project Management",
-  "Copywriting",
+  "Market Research",
+  "Web & App Development",
+  "Front-End & Back-End",
+  "Data Analysis",
+  "API & Database",
+  "Team Collaboration",
+  "Frameworks",
+  "Content Writing",
 ];
 
 const SKILLS_LIMIT = 6;

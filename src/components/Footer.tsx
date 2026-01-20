@@ -18,7 +18,7 @@ const Footer = () => {
               Balgis Sidqi<span className="text-primary italic">.</span>
             </h3>
             <p className="mt-2 text-sm font-sans text-muted-foreground">
-              Creating meaningful experiences,<br />one design at a time.
+              Create Something<br />Beautiful Together.
             </p>
           </div>
 

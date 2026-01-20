@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logopink from "@/assets/logopink.png";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -32,8 +33,14 @@ const Navbar = () => {
       >
         <div className="container-wide px-6 md:px-12 lg:px-20 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="text-2xl font-serif font-medium text-charcoal">
-            Balgis<span className="text-primary italic">.</span>
+          <a href="#" className="flex flex-row items-center gap-2 text-2xl font-serif font-medium text-charcoal"
+>
+             <img
+                src= {logopink}
+                alt="Balgis Sidqi Logo"
+                className="h-11 w-11"
+              />
+            Balgis Sidqi
           </a>
 
           {/* Desktop Navigation */}

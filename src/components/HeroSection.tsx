@@ -33,9 +33,9 @@ const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-balance"
           >
             Hi, I'm{" "}
-            <span className="text-primary italic">Balgis Sidqi</span>
+            <span className="text-primary italic">Balgis Sidqi A. M.</span>
             <br />
-            <span className="text-charcoal">Creative Problem Solver</span>
+            <span className="text-charcoal">Administrative & Data Support</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -45,10 +45,23 @@ const HeroSection = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-lg md:text-xl text-muted-foreground font-sans font-light max-w-2xl leading-relaxed"
           >
-            Passionate about transforming ideas into meaningful experiences. 
-            Combining creativity, strategy, and genuine enthusiasm to make an impact 
-            in <span className="text-secondary-foreground font-medium">product development</span> and{" "}
-            <span className="text-secondary-foreground font-medium">user experience</span>.
+           <p>
+  <span className="text-secondary-foreground font-medium">
+    Detail-oriented and organized
+  </span>
+  , with a strong interest in{" "}
+  <span className="text-secondary-foreground font-medium">
+    administrative work and data handling
+  </span>
+  .
+  <br />
+  Work with{" "}
+  <span className="text-secondary-foreground font-medium">
+    accuracy, structured thinking, and adaptability
+  </span>{" "}
+  to deliver efficient workflows, reliable data management, and smooth team operations.
+</p>
+
           </motion.p>
 
           {/* CTA Buttons */}
