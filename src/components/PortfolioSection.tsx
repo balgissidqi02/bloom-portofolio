@@ -2,15 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Briefcase, GraduationCap, Award, Users, Folder, Star, ChevronDown, ChevronUp } from "lucide-react";
-
-interface PortfolioItem {
-  id: number;
-  title: string;
-  description: string;
-  role: string;
-  highlight: string;
-  category: string;
-}
+import PortfolioModal, { PortfolioItemDetail } from "./PortfolioModal";
 
 const categories = [
   { id: "all", label: "Semua", icon: Star },
@@ -21,7 +13,7 @@ const categories = [
   { id: "education", label: "Pendidikan", icon: GraduationCap },
 ];
 
-const portfolioItems: PortfolioItem[] = [
+const portfolioItems: PortfolioItemDetail[] = [
   {
     id: 1,
     title: "Market Research, Customer Outreach, and Customer Engagement Optimization",
@@ -29,6 +21,10 @@ const portfolioItems: PortfolioItem[] = [
     role: "Market Research",
     highlight: "Mendapatkan customer dari berbagai daerah",
     category: "project",
+    images: [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 2,
@@ -37,6 +33,11 @@ const portfolioItems: PortfolioItem[] = [
     role: "Marketing Team",
     highlight: "Menjadi bagian Marketing Team di Slashtech selama 10 bulan ",
     category: "experience",
+    images: [
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 3,
@@ -45,6 +46,10 @@ const portfolioItems: PortfolioItem[] = [
     role: "Full Stack Developer",
     highlight: "Mengembangkan website dengan category finance ",
     category: "project",
+    images: [
+      "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 4,
@@ -53,6 +58,9 @@ const portfolioItems: PortfolioItem[] = [
     role: "Data Analyst",
     highlight: "Mendapatkan harga rumah berdasarkan analisa ",
     category: "project",
+    images: [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 5,
@@ -61,6 +69,9 @@ const portfolioItems: PortfolioItem[] = [
     role: "Data Analyst",
     highlight: "Mendapatkan hasil data yang bersih dan terstruktur",
     category: "project",
+    images: [
+      "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 6,
@@ -69,6 +80,10 @@ const portfolioItems: PortfolioItem[] = [
     role: "Project Leader",
     highlight: "Berhasilnya acara perayaan Tahun Baru Islam dengan lancar",
     category: "experience",
+    images: [
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 7,
@@ -77,6 +92,9 @@ const portfolioItems: PortfolioItem[] = [
     role: "Student Council Member",
     highlight: "Mendukung kegiatan sekolah serta mengembangkan kerja sama lintas divisi, tanggung jawab, dan komunikasi.",
     category: "organization",
+    images: [
+      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 8,
@@ -85,6 +103,9 @@ const portfolioItems: PortfolioItem[] = [
     role: "Public Relations Division Member",
     highlight: "Mendukung komunikasi, publikasi, dan koordinasi kegiatan organisasi.",
     category: "organization",
+    images: [
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 9,
@@ -93,6 +114,10 @@ const portfolioItems: PortfolioItem[] = [
     role: "Product & Business Development Team Member",
     highlight: "Mengembangkan ide produk herbal, menyusun business plan, dan menganalisis kebutuhan pasar.",
     category: "certification",
+    images: [
+      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 10,
@@ -101,6 +126,9 @@ const portfolioItems: PortfolioItem[] = [
     role: "Student",
     highlight: "Pengembangan web & aplikasi, framework, serta penguatan kerja tim, komunikasi, dan tanggung jawab.",
     category: "education",
+    images: [
+      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=500&fit=crop",
+    ],
   },
   {
     id: 11,
@@ -109,6 +137,10 @@ const portfolioItems: PortfolioItem[] = [
     role: "Fullstack",
     highlight: "Fullstack Programmer pada pelatihan React PT Saka Technology, pengembang website edukasi Artyclopedia.",
     category: "certification",
+    images: [
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&h=500&fit=crop",
+    ],
   },
 ];
 
@@ -119,6 +151,8 @@ const PortfolioSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeCategory, setActiveCategory] = useState("all");
   const [showAllItems, setShowAllItems] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<PortfolioItemDetail | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredItems = activeCategory === "all" 
     ? portfolioItems 
@@ -136,6 +170,16 @@ const PortfolioSection = () => {
   const handleCategoryChange = (categoryId: string) => {
     setActiveCategory(categoryId);
     setShowAllItems(false);
+  };
+
+  const handleItemClick = (item: PortfolioItemDetail) => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedItem(null);
   };
 
   return (
@@ -199,36 +243,55 @@ const PortfolioSection = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.95 }}
                 transition={{ delay: 0.05 * index, duration: 0.4, ease: "easeOut" }}
-                className="group bg-card rounded-2xl p-6 shadow-soft hover:shadow-card transition-all duration-300 cursor-pointer"
+                onClick={() => handleItemClick(item)}
+                className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 cursor-pointer"
               >
-                {/* Category Badge */}
-                <span className="inline-block px-3 py-1 bg-sage-light text-secondary-foreground rounded-full text-xs font-sans mb-4 capitalize">
-                  {item.category}
-                </span>
+                {/* Thumbnail Image */}
+                {item.images && item.images.length > 0 && (
+                  <div className="relative aspect-video overflow-hidden">
+                    <img
+                      src={item.images[0]}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {item.images.length > 1 && (
+                      <span className="absolute bottom-2 right-2 px-2 py-1 bg-charcoal/70 backdrop-blur-sm text-ivory text-xs rounded-full">
+                        +{item.images.length - 1} foto
+                      </span>
+                    )}
+                  </div>
+                )}
 
-                {/* Title */}
-                <h3 className="text-xl font-serif font-medium text-charcoal mb-2 group-hover:text-primary transition-colors">
-                  {item.title}
-                </h3>
+                <div className="p-6">
+                  {/* Category Badge */}
+                  <span className="inline-block px-3 py-1 bg-sage-light text-secondary-foreground rounded-full text-xs font-sans mb-4 capitalize">
+                    {item.category}
+                  </span>
 
-                {/* Role */}
-                <p className="text-sm font-sans text-primary font-medium mb-3">
-                  {item.role}
-                </p>
+                  {/* Title */}
+                  <h3 className="text-xl font-serif font-medium text-charcoal mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                    {item.title}
+                  </h3>
 
-                {/* Description */}
-                <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4">
-                  {item.description}
-                </p>
-
-                {/* Highlight */}
-                <div className="pt-4 border-t border-border">
-                  <p className="text-xs font-sans text-muted-foreground uppercase tracking-wider mb-1">
-                    Highlight
+                  {/* Role */}
+                  <p className="text-sm font-sans text-primary font-medium mb-3">
+                    {item.role}
                   </p>
-                  <p className="text-sm font-sans font-medium text-foreground">
-                    {item.highlight}
+
+                  {/* Description */}
+                  <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4 line-clamp-3">
+                    {item.description}
                   </p>
+
+                  {/* Highlight */}
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-xs font-sans text-muted-foreground uppercase tracking-wider mb-1">
+                      Highlight
+                    </p>
+                    <p className="text-sm font-sans font-medium text-foreground line-clamp-2">
+                      {item.highlight}
+                    </p>
+                  </div>
                 </div>
               </motion.article>
             ))}
@@ -261,6 +324,13 @@ const PortfolioSection = () => {
             </button>
           </motion.div>
         )}
+
+        {/* Portfolio Detail Modal */}
+        <PortfolioModal
+          item={selectedItem}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        />
       </div>
     </section>
   );
