@@ -60,7 +60,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm font-sans text-muted-foreground">
-            © 2025 Balgis Sidqi Al Mukarromah. All rights reserved.
+            © 2026 Balgis Sidqi Al Mukarromah. All rights reserved.
           </p>
           <p className="text-sm font-sans text-muted-foreground flex items-center gap-1">
             Made with <Heart className="w-4 h-4 text-primary fill-primary" /> and lots of coffee

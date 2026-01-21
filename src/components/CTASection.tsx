@@ -73,7 +73,7 @@ const CTASection = () => {
             className="mt-12 inline-flex items-center gap-2 text-sm font-sans text-ivory/60"
           >
             <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
-            Available for opportunities starting February 2025
+            Open to new opportunities
           </motion.div>
         </motion.div>
       </div>

@@ -22,8 +22,10 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mendapatkan customer dari berbagai daerah",
     category: "project",
     images: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+      "/src/assets/reasearch1.jpeg",
+      "/src/assets/research2.jpeg",
+      "/src/assets/reasearch3.jpeg",
+      "/src/assets/reasearch4.png",
     ],
   },
   {
@@ -34,21 +36,24 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Menjadi bagian Marketing Team di Slashtech selama 10 bulan ",
     category: "experience",
     images: [
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=500&fit=crop",
+      "/src/assets/intern1.jpeg",
+      "/src/assets/intern2.jpeg",
+      "/src/assets/intern3.jpeg",
     ],
   },
   {
     id: 3,
-    title: "FULL STACK WEBSITE JAGACUAN",
+    title: "Full Stack Website JagaCuan",
     description: "Mengembangkan aplikasi web edukasi keuangan untuk remaja yang bertujuan membantu pengguna memahami dan membangun kebiasaan pengelolaan keuangan sejak dini. Aplikasi ini menyediakan fitur pembelajaran berbasis video yang dilengkapi dengan kuis interaktif untuk mengukur pemahaman pengguna, serta fitur pencatatan pengeluaran (spending tracker), perencanaan anggaran (budgeting), tabungan (saving), dan financial challenge untuk meningkatkan keterlibatan pengguna dalam belajar keuangan secara menyenangkan.",
     role: "Full Stack Developer",
     highlight: "Mengembangkan website dengan category finance ",
     category: "project",
     images: [
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+      "/src/assets/jagacuan1.png",
+      "/src/assets/jagacuan2.png",
+      "/src/assets/jagacuan3.png",
+      "/src/assets/jagacuan4.png",
+      "/src/assets/jagacuan5.png",
     ],
   },
   {
@@ -59,18 +64,23 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mendapatkan harga rumah berdasarkan analisa ",
     category: "project",
     images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+      "/src/assets/pythonrumah1.png",
+      "/src/assets/pythonrumah2.png",
+      "/src/assets/pythonrumah3.png",
     ],
   },
   {
     id: 5,
-    title: "Pengolahan & Model Data Pada Microsoft Excel",
-    description: "Melakukan pengolahan dan pemodelan data menggunakan Microsoft Excel dengan berbagai rumus, mencakup pembersihan data, analisis, visualisasi dalam bentuk grafik/dashboard, serta penggunaan fitur interaktif seperti filter dan sorting untuk mempermudah eksplorasi data.",
+    title: "Pengolahan & Model Data Pada Python",
+    description: "Melakukan pengolahan dan pemodelan data menggunakan Python dengan berbagai rumus, mencakup pembersihan data, analisis, visualisasi dalam bentuk grafik/dashboard, serta penggunaan fitur interaktif seperti filter dan sorting untuk mempermudah eksplorasi data.",
     role: "Data Analyst",
     highlight: "Mendapatkan hasil data yang bersih dan terstruktur",
     category: "project",
     images: [
-      "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=500&fit=crop",
+      "/src/assets/model2.jpeg",
+      "/src/assets/model1.jpeg",
+      "/src/assets/model3.png",
+      "/src/assets/model4.png",
     ],
   },
   {
@@ -81,8 +91,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Berhasilnya acara perayaan Tahun Baru Islam dengan lancar",
     category: "experience",
     images: [
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=500&fit=crop",
+      "/src/assets/ketupel2.jpeg.png",
+      // "/src/assets/ketupel10.png",
+      "/src/assets/ketupel4.png",
     ],
   },
   {
@@ -93,7 +104,11 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mendukung kegiatan sekolah serta mengembangkan kerja sama lintas divisi, tanggung jawab, dan komunikasi.",
     category: "organization",
     images: [
-      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=500&fit=crop",
+      "/src/assets/osis1.jpeg",
+      "/src/assets/osis2.jpeg",
+      "/src/assets/osis4.jpeg",
+      "/src/assets/osis5.jpeg",
+      "/src/assets/osis6.png",
     ],
   },
   {
@@ -104,7 +119,11 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mendukung komunikasi, publikasi, dan koordinasi kegiatan organisasi.",
     category: "organization",
     images: [
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=500&fit=crop",
+      "/src/assets/ambalan4.jpeg",
+      "/src/assets/ambalan3.jpeg",
+      "/src/assets/ambalan5.jpeg",
+      "/src/assets/ambalan6.jpeg",
+      "/src/assets/ambalan8.jpeg",
     ],
   },
   {
@@ -115,8 +134,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mengembangkan ide produk herbal, menyusun business plan, dan menganalisis kebutuhan pasar.",
     category: "certification",
     images: [
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop",
+      "/src/assets/skobic2.jpeg",
+      "/src/assets/skobic1.png",
+      "/src/assets/skobic3.jpeg",
     ],
   },
   {
@@ -127,7 +147,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Pengembangan web & aplikasi, framework, serta penguatan kerja tim, komunikasi, dan tanggung jawab.",
     category: "education",
     images: [
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=500&fit=crop",
+      "/src/assets/siswi1.jpeg",
+      "/src/assets/siswi2.jpeg",
+      "/src/assets/siswi3.jpeg",
     ],
   },
   {
@@ -138,8 +160,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Fullstack Programmer pada pelatihan React PT Saka Technology, pengembang website edukasi Artyclopedia.",
     category: "certification",
     images: [
-      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&h=500&fit=crop",
+      "/src/assets/saka2.jpeg",
+      "/src/assets/sertifsaka.jpg",
+      "/src/assets/saka3.jpg",
     ],
   },
 ];
