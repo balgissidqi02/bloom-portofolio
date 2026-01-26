@@ -24,9 +24,7 @@ const portfolioItems: PortfolioItemDetail[] = [
     category: "project",
     images: [
        "/images/reasearch1.jpeg",
-       "/images/reasearch2.jpeg",
        "/images/reasearch3.jpeg",
-       "/images/reasearch4.jpeg",
     ],
   },
   {
