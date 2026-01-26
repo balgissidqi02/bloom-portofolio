@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { Briefcase, GraduationCap, Award, Users, Folder, Star, ChevronDown, ChevronUp } from "lucide-react";
 import PortfolioModal, { PortfolioItemDetail } from "./PortfolioModal";
 
+
 const categories = [
   { id: "all", label: "Semua", icon: Star },
   { id: "experience", label: "Pengalaman", icon: Briefcase },
@@ -22,10 +23,10 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mendapatkan customer dari berbagai daerah",
     category: "project",
     images: [
-      "/src/assets/reasearch1.jpeg",
-      "/src/assets/research2.jpeg",
-      "/src/assets/reasearch3.jpeg",
-      "/src/assets/reasearch4.png",
+       "/images/reasearch1.jpeg",
+       "/images/reasearch2.jpeg",
+       "/images/reasearch3.jpeg",
+       "/images/reasearch4.jpeg",
     ],
   },
   {
