@@ -51,7 +51,7 @@ const portfolioItems: PortfolioItemDetail[] = [
       "/images/jagacuan1.png",
       "/images/jagacuan2.png",
       "/images/jagacuan3.png",
-      "/images/jagacuan4.png",
+      "/images/Jagacuan4.png",
       "/images/jagacuan5.png",
     ],
   },
