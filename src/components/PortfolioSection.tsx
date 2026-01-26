@@ -37,9 +37,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Menjadi bagian Marketing Team di Slashtech selama 10 bulan ",
     category: "experience",
     images: [
-      "/src/assets/intern1.jpeg",
-      "/src/assets/intern2.jpeg",
-      "/src/assets/intern3.jpeg",
+      "/images/intern1.jpeg",
+      "/images/intern2.jpeg",
+      "/images/intern3.jpeg",
     ],
   },
   {
@@ -50,11 +50,11 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mengembangkan website dengan category finance ",
     category: "project",
     images: [
-      "/src/assets/jagacuan1.png",
-      "/src/assets/jagacuan2.png",
-      "/src/assets/jagacuan3.png",
-      "/src/assets/jagacuan4.png",
-      "/src/assets/jagacuan5.png",
+      "/images/jagacuan1.png",
+      "/images/jagacuan2.png",
+      "/images/jagacuan3.png",
+      "/images/jagacuan4.png",
+      "/images/jagacuan5.png",
     ],
   },
   {
@@ -65,9 +65,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mendapatkan harga rumah berdasarkan analisa ",
     category: "project",
     images: [
-      "/src/assets/pythonrumah1.png",
-      "/src/assets/pythonrumah2.png",
-      "/src/assets/pythonrumah3.png",
+      "/images/pythonrumah1.png",
+      "/images/pythonrumah2.png",
+      "/images/pythonrumah3.png",
     ],
   },
   {
@@ -78,10 +78,10 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mendapatkan hasil data yang bersih dan terstruktur",
     category: "project",
     images: [
-      "/src/assets/model2.jpeg",
-      "/src/assets/model1.jpeg",
-      "/src/assets/model3.png",
-      "/src/assets/model4.png",
+      "/images/model2.jpeg",
+      "/images/model1.jpeg",
+      "/images/model3.png",
+      "/images/model4.png",
     ],
   },
   {
@@ -92,9 +92,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Berhasilnya acara perayaan Tahun Baru Islam dengan lancar",
     category: "experience",
     images: [
-      "/src/assets/ketupel2.jpeg.png",
+      "/images/ketupel2.jpeg.png",
       // "/src/assets/ketupel10.png",
-      "/src/assets/ketupel4.png",
+      "/images/ketupel4.png",
     ],
   },
   {
@@ -105,11 +105,11 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mendukung kegiatan sekolah serta mengembangkan kerja sama lintas divisi, tanggung jawab, dan komunikasi.",
     category: "organization",
     images: [
-      "/src/assets/osis1.jpeg",
-      "/src/assets/osis2.jpeg",
-      "/src/assets/osis4.jpeg",
-      "/src/assets/osis5.jpeg",
-      "/src/assets/osis6.png",
+      "/images/osis1.jpeg",
+      "/images/osis2.jpeg",
+      "/images/osis4.jpeg",
+      "/images/osis5.jpeg",
+      "/images/osis6.png",
     ],
   },
   {
@@ -120,11 +120,11 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mendukung komunikasi, publikasi, dan koordinasi kegiatan organisasi.",
     category: "organization",
     images: [
-      "/src/assets/ambalan4.jpeg",
-      "/src/assets/ambalan3.jpeg",
-      "/src/assets/ambalan5.jpeg",
-      "/src/assets/ambalan6.jpeg",
-      "/src/assets/ambalan8.jpeg",
+      "/images/ambalan4.jpeg",
+      "/images/ambalan3.jpeg",
+      "/images/ambalan5.jpeg",
+      "/images/ambalan6.jpeg",
+      "/images/ambalan8.jpeg",
     ],
   },
   {
@@ -135,9 +135,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Mengembangkan ide produk herbal, menyusun business plan, dan menganalisis kebutuhan pasar.",
     category: "certification",
     images: [
-      "/src/assets/skobic2.jpeg",
-      "/src/assets/skobic1.png",
-      "/src/assets/skobic3.jpeg",
+      "/images/skobic2.jpeg",
+      "/images/skobic1.png",
+      "/images/skobic3.jpeg",
     ],
   },
   {
@@ -148,9 +148,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Pengembangan web & aplikasi, framework, serta penguatan kerja tim, komunikasi, dan tanggung jawab.",
     category: "education",
     images: [
-      "/src/assets/siswi1.jpeg",
-      "/src/assets/siswi2.jpeg",
-      "/src/assets/siswi3.jpeg",
+      "/images/siswi1.jpeg",
+      "/images/siswi2.jpeg",
+      "/images/siswi3.jpeg",
     ],
   },
   {
@@ -161,9 +161,9 @@ const portfolioItems: PortfolioItemDetail[] = [
     highlight: "Fullstack Programmer pada pelatihan React PT Saka Technology, pengembang website edukasi Artyclopedia.",
     category: "certification",
     images: [
-      "/src/assets/saka2.jpeg",
-      "/src/assets/sertifsaka.jpg",
-      "/src/assets/saka3.jpg",
+      "/images/saka2.jpeg",
+      "/images/sertifsaka.jpg",
+      "/images/saka3.jpg",
     ],
   },
 ];
