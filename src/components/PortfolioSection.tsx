@@ -42,7 +42,7 @@ const portfolioItems: PortfolioItemDetail[] = [
   },
   {
     id: 3,
-    title: "Full Stack Website JagaCuan",
+    title: "Full Stack Web App JagaCuan",
     description: "Mengembangkan aplikasi web edukasi keuangan untuk remaja yang bertujuan membantu pengguna memahami dan membangun kebiasaan pengelolaan keuangan sejak dini. Aplikasi ini menyediakan fitur pembelajaran berbasis video yang dilengkapi dengan kuis interaktif untuk mengukur pemahaman pengguna, serta fitur pencatatan pengeluaran (spending tracker), perencanaan anggaran (budgeting), tabungan (saving), dan financial challenge untuk meningkatkan keterlibatan pengguna dalam belajar keuangan secara menyenangkan.",
     role: "Full Stack Developer",
     highlight: "Mengembangkan website dengan category finance ",
